@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+// https://dog.ceo/api/breeds/image/random
 
-<body>
-  Hello world
-  <div id='dogImage'> <img src="" alt=""></div>
-  <button id='dogButton'>Get New Dog</button>
-  <script src="script.js"> </script>
 
-</body>
 
-</html>
+const dogImageDiv = document.getElementById('dogImage')
+const dogButton = document.getElementById('dogButton')
+
+const getNewDog = () => {
+fetch('https://dog.ceo/api/breeds/image/random')
+  .then(response => response.json())
+  .then(json => {
+       dogImageDiv.innerHTML = `<img src='${json.message}' height=300 width=300/>`
+  })
+  
+}
+
+dogButton.onclick = () => getNewDog()
