@@ -1,9 +1,19 @@
+<!DOCTYPE html>
+<html>
 
-const dogImageDiv = document.getElementById('dogImage')
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
 
-fetch('https://dog.ceo/api/breeds/image/random')
-  .then(response => response.json())
-  .then(json => {
-    console.log(json.message)
-       dogImageDiv.innerHTML = `<img src='${json.message}' height=300 width=300/>`
-  })
+<body>
+  Hello world
+  <div id='dogImage'> <img src="" alt=""></div>
+  <button id='dogButton'>Get New Dog</button>
+  <script src="script.js"> </script>
+
+</body>
+
+</html>
